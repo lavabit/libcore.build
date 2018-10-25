@@ -64,6 +64,7 @@ script:
   - git checkout origin/master -- .travis.yml
   - sed -i "s/CORE_SECURE_MEMORY_LENGTH 65536/CORE_SECURE_MEMORY_LENGTH 57344/g" src/libcore.h
   - sed -i "s/\/tmp\/magma\//.tmp\//g" src/core/host/spool.c && mkdir .tmp/ && chmod 766 .tmp/
+  - set -i "s/log_enabled = false/log_enabled = true/g" src/log.c
   - grep --after-context=10 MAGMA_ENGINE_CONFIG_GLOBAL_H src/core/host/spool.c
   - grep CORE_SECURE_MEMORY_LENGTH src/libcore.h
   - make core.check libcore.a libcore.so
