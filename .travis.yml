@@ -63,7 +63,8 @@ script:
   - git reset --hard upstream/develop
   - git checkout origin/master -- .travis.yml
   - sed -i "s/CORE_SECURE_MEMORY_LENGTH 65536/CORE_SECURE_MEMORY_LENGTH 57344/g" src/libcore.h
-  - sed -i "s/\/tmp\/magma\//.tmp\//g" src/core/host/spool.c && mkdir .tmp/ && chmod 766 .tmp/
+  - sed -i "s/\/tmp\/magma\//.tmp\//g" src/core/host/spool.c
+  - mkdir .tmp/ && chmod 766 .tmp/ && mkdir .tmp/data/ && chmod 766 .tmp/data/
   - # sed -i "s/log_enabled = false/log_enabled = true/g" src/log.c
   - sed -i "429s/log_disable/log_enable/" check/core/core_check.c
   - sed -i "406s/log_disable/log_enable/" check/core/core_check.c
