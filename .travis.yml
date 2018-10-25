@@ -56,6 +56,7 @@ script:
   - git fetch upstream
   - git reset --hard upstream/develop
   - git checkout origin/master -- .travis.yml
+  - sed -i "s/CORE_SECURE_MEMORY_ENABLED true/CORE_SECURE_MEMORY_ENABLED false/g" src/libcore.h
   - make VERBOSE=yes core.check libcore.a libcore.so
   - gcc -rdynamic --output='core.check' .objs/check/sample_check.o .objs/check/magma_check.o .objs/check/core/zbase32_check.o .objs/check/core/string_check.o .objs/check/core/core_check.o .objs/check/core/system_check.o .objs/check/core/qp_check.o .objs/check/core/ip_check.o .objs/check/core/qsort_check.o .objs/check/core/checksum_check.o .objs/check/core/inx_check.o .objs/check/core/url_check.o .objs/check/core/base64_check.o .objs/check/core/clamp_check.o .objs/check/core/bitwise_check.o .objs/check/core/linked_check.o .objs/check/core/hashed_check.o .objs/check/core/nbo_check.o .objs/check/core/hex_check.o .objs/check/core/tree_check.o -Wl,--start-group,--whole-archive  libcore.a  -Wl,--no-whole-archive,--end-group  -lresolv -lrt -ldl -lm -lstdc++ -lpthread -lcheck -lsubunit -lm
   - ./core.check  
