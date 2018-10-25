@@ -6,8 +6,10 @@ compiler: gcc
 sudo: required
 notifications:
   email:
+    recipients:
+      - make@magmadaemon.com
     on_success: never
-    on_failure: never
+    on_failure: always
 addons:
   apt:
     packages:
@@ -62,19 +64,9 @@ script:
   - git fetch upstream
   - git reset --hard upstream/develop
   - git checkout origin/master -- .travis.yml
-  - # sed -i "s/CORE_SECURE_MEMORY_LENGTH 65536/CORE_SECURE_MEMORY_LENGTH 57344/g" src/libcore.h
-  - sed -i "s/\/tmp\/magma\//.tmp\//g" src/core/host/spool.c
-  - mkdir .tmp/ && chmod 766 .tmp/ && mkdir .tmp/data/ && chmod 766 .tmp/data/
-  - mkdir /tmp/magma/ && chmod 766 /tmp/magma/ && mkdir /tmp/magma/data/ && chmod 766 /tmp/magma/data/
-  - # sed -i "s/log_enabled = false/log_enabled = true/g" src/log.c
-  - # sed -i "429s/log_disable/log_enable/" check/core/core_check.c
-  - # sed -i "406s/log_disable/log_enable/" check/core/core_check.c
-  - # sed -i "452s/log_disable/log_enable/" check/core/core_check.c
-  - # sed -i "s/-D_REENTRANT/-DMAGMA_PEDANTIC -D_REENTRANT/g" Makefile
-  - make core.check libcore.a libcore.so
-  - # gcc -rdynamic --output='core.check' .objs/check/sample_check.o .objs/check/magma_check.o .objs/check/core/zbase32_check.o .objs/check/core/string_check.o .objs/check/core/core_check.o .objs/check/core/system_check.o .objs/check/core/qp_check.o .objs/check/core/ip_check.o .objs/check/core/qsort_check.o .objs/check/core/checksum_check.o .objs/check/core/inx_check.o .objs/check/core/url_check.o .objs/check/core/base64_check.o .objs/check/core/clamp_check.o .objs/check/core/bitwise_check.o .objs/check/core/linked_check.o .objs/check/core/hashed_check.o .objs/check/core/nbo_check.o .objs/check/core/hex_check.o .objs/check/core/tree_check.o -Wl,--start-group,--whole-archive  libcore.a  -Wl,--no-whole-archive,--end-group  -lresolv -lrt -ldl -lstdc++ -lpthread -lcheck -lsubunit -lm
   - sudo -E "$HOME"/bin/prlimit --pid "$$" --stack=unlimited:unlimited;
   - sudo -E "$HOME"/bin/prlimit --pid "$$" --memlock=unlimited:unlimited;
+  - mkdir .tmp/ && chmod 766 .tmp/ && mkdir .tmp/data/ && chmod 766 .tmp/data/
+  - mkdir /tmp/magma/ && chmod 766 /tmp/magma/ && mkdir /tmp/magma/data/ && chmod 766 /tmp/magma/data/
+  - make --jobs=4 core.check libcore.a libcore.so
   - $TRAVIS_BUILD_DIR/core.check
-  - # ulimit -a
-  - # sudo su -l -c "gdb --batch-silent --eval-command=run $TRAVIS_BUILD_DIR/core.check"
