@@ -1,6 +1,6 @@
 os: linux
 language: c++
-dist: trusty
+dist: xenial
 group: stable
 compiler: gcc
 notifications:
@@ -57,5 +57,5 @@ script:
   - git fetch upstream
   - git reset --hard upstream/develop
   - git checkout origin/master -- .travis.yml
-  - make core.check libcore.a libcore.so
+  - make VERBOSE=yes core.check libcore.a libcore.so
   - ./core.check
