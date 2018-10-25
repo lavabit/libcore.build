@@ -51,11 +51,12 @@ addons:
     - valgrind 
     - valgrind-dbg
     - wget
-before_script:
-  - ulimit -l 65536 -S
-  - ulimit -s 65536 -S
 script: 
   - export HOSTNAME=`hostname`
+  - sudo printf "*    soft    stack     65536\n" >> /etc/security/limits.d/50-limits.conf
+  - sudo printf "*    hard    stack     65536\n" >> /etc/security/limits.d/50-limits.conf
+  - sudo printf "*    soft    memlock     65536\n" >> /etc/security/limits.d/50-limits.conf
+  - sudo printf "*    hard    memlock     65536\n" >> /etc/security/limits.d/50-limits.conf
   - git remote add upstream https://github.com/lavabit/libcore.git
   - git fetch upstream
   - git reset --hard upstream/develop
