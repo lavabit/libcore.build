@@ -68,5 +68,7 @@ script:
   - sudo -E "$HOME"/bin/prlimit --pid "$$" --memlock=unlimited:unlimited;
   - mkdir .tmp/ && chmod 766 .tmp/ && mkdir .tmp/data/ && chmod 766 .tmp/data/
   - mkdir /tmp/magma/ && chmod 766 /tmp/magma/ && mkdir /tmp/magma/data/ && chmod 766 /tmp/magma/data/
-  - make --jobs=4 core.check libcore.a libcore.so
+  - make --jobs=4 libcore.a
+  - make --jobs=4 libcore.so
+  - make --jobs=4 core.check 
   - $TRAVIS_BUILD_DIR/core.check
