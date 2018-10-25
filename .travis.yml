@@ -51,6 +51,11 @@ addons:
     - valgrind
     - valgrind-dbg
     - wget
+before_script:
+  - curl -o util-linux-2.25.2.tar.gz https://www.kernel.org/pub/linux/utils/util-linux/v2.25/util-linux-2.25.2.tar.gz
+  - tar -xzvf util-linux-2.25.2.tar.gz && cd util-linux-2.25.2
+  - ./configure ADJTIME_PATH=/var/lib/hwclock/adjtime --disable-chfn-chsh --disable-login --disable-nologin --disable-su --disable-setpriv --disable-runuser --disable-pylibmount --disable-static --without-python --without-systemd --without-systemdsystemunitdir --without-ncurses || cat config.log
+  - make prlimit && install --directory $HOME/bin/ && install --mode=755 prlimit $HOME/bin/prlimit
 script:
   - export HOSTNAME=`hostname`
   - git remote add upstream https://github.com/lavabit/libcore.git
