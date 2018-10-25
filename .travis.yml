@@ -51,11 +51,6 @@ addons:
     - valgrind
     - valgrind-dbg
     - wget
-before_script:
-  - sudo printf "*    soft    stack     65536\n" >> /etc/security/limits.d/50-limits.conf
-  - sudo printf "*    hard    stack     65536\n" >> /etc/security/limits.d/50-limits.conf
-  - sudo printf "*    soft    memlock     65536\n" >> /etc/security/limits.d/50-limits.conf
-  - sudo printf "*    hard    memlock     65536\n" >> /etc/security/limits.d/50-limits.conf
 script:
   - export HOSTNAME=`hostname`
   - git remote add upstream https://github.com/lavabit/libcore.git
@@ -66,5 +61,4 @@ script:
   - grep CORE_SECURE_MEMORY_LENGTH src/libcore.h
   - make core.check libcore.a libcore.so
   - gcc -rdynamic --output='core.check' .objs/check/sample_check.o .objs/check/magma_check.o .objs/check/core/zbase32_check.o .objs/check/core/string_check.o .objs/check/core/core_check.o .objs/check/core/system_check.o .objs/check/core/qp_check.o .objs/check/core/ip_check.o .objs/check/core/qsort_check.o .objs/check/core/checksum_check.o .objs/check/core/inx_check.o .objs/check/core/url_check.o .objs/check/core/base64_check.o .objs/check/core/clamp_check.o .objs/check/core/bitwise_check.o .objs/check/core/linked_check.o .objs/check/core/hashed_check.o .objs/check/core/nbo_check.o .objs/check/core/hex_check.o .objs/check/core/tree_check.o -Wl,--start-group,--whole-archive  libcore.a  -Wl,--no-whole-archive,--end-group  -lresolv -lrt -ldl -lstdc++ -lpthread -lcheck -lsubunit -lm
-  - sudo su -l -c $TRAVIS_BUILD_DIR/core.check
-  - ulimit -a
+  - sudo su -l -c "ulimit -s 65536 -S; ulimit -l 65536 -S; $TRAVIS_BUILD_DIR/core.check"
