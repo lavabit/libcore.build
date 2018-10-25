@@ -1,0 +1,60 @@
+os: linux
+language: c++
+dist: trusty
+group: stable
+compiler: gcc
+notifications:
+  email:
+    on_success: never
+    on_failure: never
+addons:
+  apt:
+    packages:
+    - autoconf 
+    - automake 
+    - bison
+    - build-essential
+    - cmake
+    - curl
+    - flex
+    - g++
+    - gcc
+    - gcc-multilib
+    - gdb
+    - git
+    - git-man
+    - gnupg
+    - ibc++-dev
+    - inotify-tools
+    - libarchive13
+    - libbsd-dev
+    - libc6-dev
+    - libmpfr4 
+    - libmpfr-dev
+    - libncurses5-dev 
+    - libpython2.7
+    - libsubunit0
+    - libsubunit-dev
+    - libsubunit-dev
+    - libtool
+    - lsof
+    - make 
+    - mlocate
+    - patch
+    - pciutils
+    - pkg-config
+    - rsync
+    - sysstat
+    - usbutils
+    - valgrind 
+    - valgrind-dbg
+    - wget
+script: 
+  - ulimit -l 64
+  - export HOSTNAME=`hostname`
+  - git remote add upstream https://github.com/lavabit/libcore.git
+  - git fetch upstream
+  - git reset --hard upstream/develop
+  - git checkout origin/master -- .travis.yml
+  - make core.check libcore.a libcore.so
+  - ./core.check
