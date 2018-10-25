@@ -1,6 +1,6 @@
 os: linux
 language: c++
-dist: xenial
+dist: trusty
 group: stable
 compiler: gcc
 sudo: required
