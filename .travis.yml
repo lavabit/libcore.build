@@ -143,3 +143,26 @@ script:
   - CC="$COMPILER" CFLAGS="$FLAGS" make --keep-going --jobs=4 libcore.so
   - CC="$COMPILER" CFLAGS="$FLAGS" make --keep-going --jobs=4 core.check
   - $TRAVIS_BUILD_DIR/core.check
+  - valgrind --tool=memcheck \
+    --log-fd=1 \
+    --trace-children=yes \
+    --child-silent-after-fork=yes \
+    --run-libc-freeres=yes \
+    --demangle=yes \
+    --num-callers=50 \
+    --error-limit=no \
+    --show-below-main=no \
+    --undef-value-errors=yes \
+    --track-origins=yes \
+    --track-fds=yes \
+    --read-var-info=yes \
+    --smc-check=none \
+    --fullpath-after= \
+    --leak-check=yes \
+    --show-reachable=yes \
+    --leak-resolution=high \
+    --workaround-gcc296-bugs=no \
+    --partial-loads-ok=yes \
+    --track-fds=yes \
+      $TRAVIS_BUILD_DIR/core.check
+
