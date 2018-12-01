@@ -11,116 +11,148 @@ notifications:
     on_success: never
     on_failure: always
 env:
-  - MATRIX_EVAL="COMPILER=gcc-4.8 CC=gcc-4.8 CXX=g++-4.8"
-  - MATRIX_EVAL="COMPILER=gcc-4.9 CC=gcc-4.9 CXX=g++-4.9"
-  - MATRIX_EVAL="COMPILER=gcc-5 CC=gcc-5 CXX=g++-5"
-  - MATRIX_EVAL="COMPILER=gcc-6 CC=gcc-6 CXX=g++-6"
-  - MATRIX_EVAL="COMPILER=gcc-7 CC=gcc-7 CXX=g++-7"
-  - MATRIX_EVAL="COMPILER=gcc-8 CC=gcc-8 CXX=g++-8"
-  - MATRIX_EVAL="COMPILER=gcc-4.8 FLAGS='-DMAGMA_PEDANTIC -O0'"
-  - MATRIX_EVAL="COMPILER=gcc-4.8 FLAGS='-DMAGMA_PEDANTIC -O2'"
-  - MATRIX_EVAL="COMPILER=gcc-4.8 FLAGS='-DMAGMA_PEDANTIC -O3'"
-  - MATRIX_EVAL="COMPILER=gcc-4.8 FLAGS='-UMAGMA_PEDANTIC -O0'"
-  - MATRIX_EVAL="COMPILER=gcc-4.8 FLAGS='-UMAGMA_PEDANTIC -O2'"
-  - MATRIX_EVAL="COMPILER=gcc-4.8 FLAGS='-UMAGMA_PEDANTIC -O3'"
-  - MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-DMAGMA_PEDANTIC -O0'"
-  - MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-DMAGMA_PEDANTIC -O2'"
-  - MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-DMAGMA_PEDANTIC -O3'"
-  - MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-UMAGMA_PEDANTIC -O0'"
-  - MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-UMAGMA_PEDANTIC -O2'"
-  - MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-UMAGMA_PEDANTIC -O3'"
-  - MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-DMAGMA_PEDANTIC -O0'"
-  - MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-DMAGMA_PEDANTIC -O2'"
-  - MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-DMAGMA_PEDANTIC -O3'"
-  - MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-UMAGMA_PEDANTIC -O0'"
-  - MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-UMAGMA_PEDANTIC -O2'"
-  - MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-UMAGMA_PEDANTIC -O3'"
+  - MATRIX_EVAL="COMPILER=gcc-4.8 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O0'"
+  - MATRIX_EVAL="COMPILER=gcc-4.8 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O1'"
+  - MATRIX_EVAL="COMPILER=gcc-4.8 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O2'"
+  - MATRIX_EVAL="COMPILER=gcc-4.8 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O3'"
+  - MATRIX_EVAL="COMPILER=gcc-4.8 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O0'"
+  - MATRIX_EVAL="COMPILER=gcc-4.8 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O1'"
+  - MATRIX_EVAL="COMPILER=gcc-4.8 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O2'"
+  - MATRIX_EVAL="COMPILER=gcc-4.8 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O3'"
+  - MATRIX_EVAL="COMPILER=gcc-4.9 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O0'"
+  - MATRIX_EVAL="COMPILER=gcc-4.9 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O1'"
+  - MATRIX_EVAL="COMPILER=gcc-4.9 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O2'"
+  - MATRIX_EVAL="COMPILER=gcc-4.9 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O3'"
+  - MATRIX_EVAL="COMPILER=gcc-4.9 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O0'"
+  - MATRIX_EVAL="COMPILER=gcc-4.9 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O1'"
+  - MATRIX_EVAL="COMPILER=gcc-4.9 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O2'"
+  - MATRIX_EVAL="COMPILER=gcc-4.9 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O3'"
+  - MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O0'"
+  - MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O1'"
+  - MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O2'"
+  - MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O3'"
+  - MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O0'"
+  - MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O1'"
+  - MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O2'"
+  - MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O3'"
+  - MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O0'"
+  - MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O1'"
+  - MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O2'"
+  - MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O3'"
+  - MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O0'"
+  - MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O1'"
+  - MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O2'"
+  - MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O3'"
+  - MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O0'"
+  - MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O1'"
+  - MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O2'"
+  - MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O3'"
+  - MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O0'"
+  - MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O1'"
+  - MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O2'"
+  - MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O3'"
+  - MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O0'"
+  - MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O1'"
+  - MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O2'"
+  - MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O3'"
+  - MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O0'"
+  - MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O1'"
+  - MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O2'"
+  - MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O3'"
+  - MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O0'"
+  - MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O1'"
+  - MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O2'"
+  - MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O3'"
+  - MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O0'"
+  - MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O1'"
+  - MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O2'"
+  - MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O3'"
 addons:
   apt:
-  config:
-      retries: true
-  sources:
-    - ubuntu-toolchain-r-test
-    - llvm-toolchain-trusty-6.0
-  packages:
-    - autoconf
-    - automake
-    - bison
-    - build-essential
-    - check
-    - cmake
-    - curl
-    - flex
-    - g++
-    - gcc
-    - gcc-multilib
-    - gdb
-    - git
-    - git-man
-    - gnupg
-    - ibc++-dev
-    - inotify-tools
-    - libarchive13
-    - libbsd-dev
-    - libc6-dev
-    - libmpfr4
-    - libmpfr-dev
-    - libncurses5-dev
-    - libpython2.7
-    - libsubunit0
-    - libsubunit-dev
-    - libtool
-    - lsof
-    - make
-    - mlocate
-    - patch
-    - pciutils
-    - pkg-config
-    - policycoreutils
-    - rsync
-    - sysstat
-    - usbutils
-    - valgrind
-    - valgrind-dbg
-    - wget
-    - gcc-4.8
-    - g++-4.8
-    - gcc-4.8-locales
-    - gcc-4.8-multilib
-    - g++-4.8-multilib
-    - libstdc++-4.8-dev
-    - gcc-4.9
-    - g++-4.9
-    - gcc-4.9-locales
-    - gcc-4.9-multilib
-    - g++-4.9-multilib
-    - libstdc++-4.9-dev
-    - gcc-5
-    - g++-5
-    - gcc-5-locales
-    - gcc-5-multilib
-    - g++-5-multilib
-    - libstdc++-5-dev
-    - gcc-6
-    - g++-6
-    - gcc-6-locales
-    - gcc-6-multilib
-    - g++-6-multilib
-    - libstdc++-6-dev
-    - gcc-7
-    - g++-7
-    - gcc-7-locales
-    - gcc-7-multilib
-    - g++-7-multilib
-    - libstdc++-7-dev
-    - gcc-8
-    - g++-8
-    - gcc-8-locales
-    - gcc-8-multilib
-    - g++-8-multilib
-    - libstdc++-8-dev
-    - clang-6.0
-    - llvm-6.0-dev
+    config:
+        retries: true
+    sources:
+      - ubuntu-toolchain-r-test
+      - llvm-toolchain-trusty-6.0
+    packages:
+      - autoconf
+      - automake
+      - bison
+      - build-essential
+      - check
+      - cmake
+      - curl
+      - flex
+      - g++
+      - gcc
+      - gcc-multilib
+      - gdb
+      - git
+      - git-man
+      - gnupg
+      - ibc++-dev
+      - inotify-tools
+      - libarchive13
+      - libbsd-dev
+      - libc6-dev
+      - libmpfr4
+      - libmpfr-dev
+      - libncurses5-dev
+      - libpython2.7
+      - libsubunit0
+      - libsubunit-dev
+      - libtool
+      - lsof
+      - make
+      - mlocate
+      - patch
+      - pciutils
+      - pkg-config
+      - policycoreutils
+      - rsync
+      - sysstat
+      - usbutils
+      - valgrind
+      - valgrind-dbg
+      - wget
+      - gcc-4.8
+      - g++-4.8
+      - gcc-4.8-locales
+      - gcc-4.8-multilib
+      - g++-4.8-multilib
+      - libstdc++-4.8-dev
+      - gcc-4.9
+      - g++-4.9
+      - gcc-4.9-locales
+      - gcc-4.9-multilib
+      - g++-4.9-multilib
+      - libstdc++-4.9-dev
+      - gcc-5
+      - g++-5
+      - gcc-5-locales
+      - gcc-5-multilib
+      - g++-5-multilib
+      - libstdc++-5-dev
+      - gcc-6
+      - g++-6
+      - gcc-6-locales
+      - gcc-6-multilib
+      - g++-6-multilib
+      - libstdc++-6-dev
+      - gcc-7
+      - g++-7
+      - gcc-7-locales
+      - gcc-7-multilib
+      - g++-7-multilib
+      - libstdc++-7-dev
+      - gcc-8
+      - g++-8
+      - gcc-8-locales
+      - gcc-8-multilib
+      - g++-8-multilib
+      - libstdc++-8-dev
+      - clang-6.0
+      - llvm-6.0-dev
 before_install:
   - eval "${MATRIX_EVAL}"
 before_script:
