@@ -1,6 +1,7 @@
+os: linux
 language: c
+dist: xenial
 group: stable
-sudo: required
 notifications:
   email:
     recipients:
@@ -10,680 +11,1160 @@ notifications:
 cache:
   - directories:
     - $HOME/packages/
-matrix:
+jobs:
   include:
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-Wno-address-of-packed-member -I/usr/include/ -DMAGMA_PEDANTIC -O0'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-Wno-address-of-packed-member -I/usr/include/ -DMAGMA_PEDANTIC -O1'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-Wno-address-of-packed-member -I/usr/include/ -DMAGMA_PEDANTIC -O2'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-Wno-address-of-packed-member -I/usr/include/ -DMAGMA_PEDANTIC -O3'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-Wno-address-of-packed-member -I/usr/include/ -UMAGMA_PEDANTIC -O0'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-Wno-address-of-packed-member -I/usr/include/ -UMAGMA_PEDANTIC -O1'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-Wno-address-of-packed-member -I/usr/include/ -UMAGMA_PEDANTIC -O2'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-Wno-address-of-packed-member -I/usr/include/ -UMAGMA_PEDANTIC -O3'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-4.8 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O0'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-4.8 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O1'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-4.8 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O2'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-4.8 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O3'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-4.8 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O0'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-4.8 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O1'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-4.8 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O2'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-4.8 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O3'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-4.9 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O0'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-4.9 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O1'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-4.9 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O2'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-4.9 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O3'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-4.9 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O0'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-4.9 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O1'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-4.9 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O2'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-4.9 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O3'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O0'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O1'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O2'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O3'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O0'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O1'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O2'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O3'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O0'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O1'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O2'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O3'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O0'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O1'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O2'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O3'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O0'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O1'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O2'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O3'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O0'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O1'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O2'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O3'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O0'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O1'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O2'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O3'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O0'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O1'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O2'"
-    - stage: cache
+    - stage: Trusty / Cache
       os: linux
       dist: trusty
       compiler: gcc
       script: true
       before_script: true
       env: MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O3'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-Wno-address-of-packed-member -I/usr/include/ -DMAGMA_PEDANTIC -O0'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-Wno-address-of-packed-member -I/usr/include/ -DMAGMA_PEDANTIC -O1'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-Wno-address-of-packed-member -I/usr/include/ -DMAGMA_PEDANTIC -O2'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-Wno-address-of-packed-member -I/usr/include/ -DMAGMA_PEDANTIC -O3'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-Wno-address-of-packed-member -I/usr/include/ -UMAGMA_PEDANTIC -O0'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-Wno-address-of-packed-member -I/usr/include/ -UMAGMA_PEDANTIC -O1'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-Wno-address-of-packed-member -I/usr/include/ -UMAGMA_PEDANTIC -O2'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-Wno-address-of-packed-member -I/usr/include/ -UMAGMA_PEDANTIC -O3'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-4.8 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O0'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-4.8 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O1'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-4.8 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O2'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-4.8 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O3'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-4.8 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O0'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-4.8 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O1'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-4.8 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O2'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-4.8 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O3'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-4.9 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O0'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-4.9 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O1'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-4.9 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O2'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-4.9 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O3'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-4.9 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O0'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-4.9 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O1'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-4.9 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O2'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-4.9 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O3'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O0'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O1'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O2'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O3'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O0'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O1'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O2'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O3'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O0'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O1'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O2'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O3'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O0'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O1'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O2'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O3'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O0'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O1'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O2'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O3'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O0'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O1'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O2'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O3'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O0'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O1'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O2'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O3'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O0'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O1'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O2'"
-    - stage: run
+    - stage: Trusty / Run
       os: linux
       dist: trusty
       compiler: gcc
       env: MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O3'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-Wno-address-of-packed-member -I/usr/include/ -DMAGMA_PEDANTIC -O0'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-Wno-address-of-packed-member -I/usr/include/ -DMAGMA_PEDANTIC -O1'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-Wno-address-of-packed-member -I/usr/include/ -DMAGMA_PEDANTIC -O2'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-Wno-address-of-packed-member -I/usr/include/ -DMAGMA_PEDANTIC -O3'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-Wno-address-of-packed-member -I/usr/include/ -UMAGMA_PEDANTIC -O0'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-Wno-address-of-packed-member -I/usr/include/ -UMAGMA_PEDANTIC -O1'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-Wno-address-of-packed-member -I/usr/include/ -UMAGMA_PEDANTIC -O2'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-Wno-address-of-packed-member -I/usr/include/ -UMAGMA_PEDANTIC -O3'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O0'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O1'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O2'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O3'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O0'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O1'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O2'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O3'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O0'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O1'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O2'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O3'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O0'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O1'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O2'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O3'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O0'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O1'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O2'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O3'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O0'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O1'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O2'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O3'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O0'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O1'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O2'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O3'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O0'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O1'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O2'"
+    - stage: Xenial / Cache
+      os: linux
+      dist: xenial
+      compiler: gcc
+      script: true
+      before_script: true
+      env: MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O3'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-Wno-address-of-packed-member -I/usr/include/ -DMAGMA_PEDANTIC -O0'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-Wno-address-of-packed-member -I/usr/include/ -DMAGMA_PEDANTIC -O1'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-Wno-address-of-packed-member -I/usr/include/ -DMAGMA_PEDANTIC -O2'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-Wno-address-of-packed-member -I/usr/include/ -DMAGMA_PEDANTIC -O3'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-Wno-address-of-packed-member -I/usr/include/ -UMAGMA_PEDANTIC -O0'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-Wno-address-of-packed-member -I/usr/include/ -UMAGMA_PEDANTIC -O1'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-Wno-address-of-packed-member -I/usr/include/ -UMAGMA_PEDANTIC -O2'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=clang-6.0 FLAGS='-Wno-address-of-packed-member -I/usr/include/ -UMAGMA_PEDANTIC -O3'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O0'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O1'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O2'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O3'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O0'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O1'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O2'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=gcc-5 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O3'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O0'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O1'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O2'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O3'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O0'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O1'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O2'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=gcc-6 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O3'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O0'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O1'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O2'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O3'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O0'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O1'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O2'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=gcc-7 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O3'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O0'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O1'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O2'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -DMAGMA_PEDANTIC -O3'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O0'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O1'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O2'"
+    - stage: Xenial / Run
+      os: linux
+      dist: xenial
+      compiler: gcc
+      env: MATRIX_EVAL="COMPILER=gcc-8 FLAGS='-I/usr/include/ -UMAGMA_PEDANTIC -O3'"    
 before_install:
   - eval "${MATRIX_EVAL}"
 install:
