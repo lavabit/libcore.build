@@ -33,62 +33,6 @@ jobs:
       os: linux
       dist: trusty
       compiler: gcc
-      name: TRUSTY / CLANG / 6.0 / PEDANTIC / 0
-      before_install:
-        - export COMPILER="clang-6.0" ; export FLAGS="-Wno-address-of-packed-member -I/usr/include/ -DMAGMA_PEDANTIC -O0"
-    - stage: Trusty
-      os: linux
-      dist: trusty
-      compiler: gcc
-      name: TRUSTY / CLANG / 6.0 / PEDANTIC / 1
-      before_install:
-        - export COMPILER="clang-6.0" ; export FLAGS="-Wno-address-of-packed-member -I/usr/include/ -DMAGMA_PEDANTIC -O1"
-    - stage: Trusty
-      os: linux
-      dist: trusty
-      compiler: gcc
-      name: TRUSTY / CLANG / 6.0 / PEDANTIC / 2
-      before_install:
-        - export COMPILER="clang-6.0" ; export FLAGS="-Wno-address-of-packed-member -I/usr/include/ -DMAGMA_PEDANTIC -O2"
-    - stage: Trusty
-      os: linux
-      dist: trusty
-      compiler: gcc
-      name: TRUSTY / CLANG / 6.0 / PEDANTIC / 3
-      before_install:
-        - export COMPILER="clang-6.0" ; export FLAGS="-Wno-address-of-packed-member -I/usr/include/ -DMAGMA_PEDANTIC -O3"
-    - stage: Trusty
-      os: linux
-      dist: trusty
-      compiler: gcc
-      name: TRUSTY / CLANG / 6.0 / NON-PEDANTIC / 0
-      before_install:
-        - export COMPILER="clang-6.0" ; export FLAGS="-Wno-address-of-packed-member -I/usr/include/ -UMAGMA_PEDANTIC -O0"
-    - stage: Trusty
-      os: linux
-      dist: trusty
-      compiler: gcc
-      name: TRUSTY / CLANG / 6.0 / NON-PEDANTIC / 1
-      before_install:
-        - export COMPILER="clang-6.0" ; export FLAGS="-Wno-address-of-packed-member -I/usr/include/ -UMAGMA_PEDANTIC -O1"
-    - stage: Trusty
-      os: linux
-      dist: trusty
-      compiler: gcc
-      name: TRUSTY / CLANG / 6.0 / NON-PEDANTIC / 2
-      before_install:
-        - export COMPILER="clang-6.0" ; export FLAGS="-Wno-address-of-packed-member -I/usr/include/ -UMAGMA_PEDANTIC -O2"
-    - stage: Trusty
-      os: linux
-      dist: trusty
-      compiler: gcc
-      name: TRUSTY / CLANG / 6.0 / NON-PEDANTIC / 3
-      before_install:
-        - export COMPILER="clang-6.0" ; export FLAGS="-Wno-address-of-packed-member -I/usr/include/ -UMAGMA_PEDANTIC -O3"
-    - stage: Trusty
-      os: linux
-      dist: trusty
-      compiler: gcc
       name: TRUSTY / GCC / 4.8 / PEDANTIC / 0
       before_install:
         - export COMPILER="gcc-4.8" ; export FLAGS="-I/usr/include/ -DMAGMA_PEDANTIC -O0"
@@ -421,60 +365,60 @@ jobs:
       name: TRUSTY / GCC / 8.0 / NON-PEDANTIC / 3
       before_install:
         - export COMPILER="gcc-8" ; export FLAGS="-I/usr/include/ -UMAGMA_PEDANTIC -O3"
-    - stage: Xenial
+    - stage: Trusty
       os: linux
-      dist: xenial
+      dist: trusty
       compiler: gcc
-      name: XENIAL / CLANG / 6.0 / PEDANTIC / 0
+      name: TRUSTY / CLANG / 6.0 / PEDANTIC / 0
       before_install:
         - export COMPILER="clang-6.0" ; export FLAGS="-Wno-address-of-packed-member -I/usr/include/ -DMAGMA_PEDANTIC -O0"
-    - stage: Xenial
+    - stage: Trusty
       os: linux
-      dist: xenial
+      dist: trusty
       compiler: gcc
-      name: XENIAL / CLANG / 6.0 / PEDANTIC / 1
+      name: TRUSTY / CLANG / 6.0 / PEDANTIC / 1
       before_install:
         - export COMPILER="clang-6.0" ; export FLAGS="-Wno-address-of-packed-member -I/usr/include/ -DMAGMA_PEDANTIC -O1"
-    - stage: Xenial
+    - stage: Trusty
       os: linux
-      dist: xenial
+      dist: trusty
       compiler: gcc
-      name: XENIAL / CLANG / 6.0 / PEDANTIC / 2
+      name: TRUSTY / CLANG / 6.0 / PEDANTIC / 2
       before_install:
         - export COMPILER="clang-6.0" ; export FLAGS="-Wno-address-of-packed-member -I/usr/include/ -DMAGMA_PEDANTIC -O2"
-    - stage: Xenial
+    - stage: Trusty
       os: linux
-      dist: xenial
+      dist: trusty
       compiler: gcc
-      name: XENIAL / CLANG / 6.0 / PEDANTIC / 3
+      name: TRUSTY / CLANG / 6.0 / PEDANTIC / 3
       before_install:
         - export COMPILER="clang-6.0" ; export FLAGS="-Wno-address-of-packed-member -I/usr/include/ -DMAGMA_PEDANTIC -O3"
-    - stage: Xenial
+    - stage: Trusty
       os: linux
-      dist: xenial
+      dist: trusty
       compiler: gcc
-      name: XENIAL / CLANG / 6.0 / NON-PEDANTIC / 0
+      name: TRUSTY / CLANG / 6.0 / NON-PEDANTIC / 0
       before_install:
         - export COMPILER="clang-6.0" ; export FLAGS="-Wno-address-of-packed-member -I/usr/include/ -UMAGMA_PEDANTIC -O0"
-    - stage: Xenial
+    - stage: Trusty
       os: linux
-      dist: xenial
+      dist: trusty
       compiler: gcc
-      name: XENIAL / CLANG / 6.0 / NON-PEDANTIC / 1
+      name: TRUSTY / CLANG / 6.0 / NON-PEDANTIC / 1
       before_install:
         - export COMPILER="clang-6.0" ; export FLAGS="-Wno-address-of-packed-member -I/usr/include/ -UMAGMA_PEDANTIC -O1"
-    - stage: Xenial
+    - stage: Trusty
       os: linux
-      dist: xenial
+      dist: trusty
       compiler: gcc
-      name: XENIAL / CLANG / 6.0 / NON-PEDANTIC / 2
+      name: TRUSTY / CLANG / 6.0 / NON-PEDANTIC / 2
       before_install:
         - export COMPILER="clang-6.0" ; export FLAGS="-Wno-address-of-packed-member -I/usr/include/ -UMAGMA_PEDANTIC -O2"
-    - stage: Xenial
+    - stage: Trusty
       os: linux
-      dist: xenial
+      dist: trusty
       compiler: gcc
-      name: XENIAL / CLANG / 6.0 / NON-PEDANTIC / 3
+      name: TRUSTY / CLANG / 6.0 / NON-PEDANTIC / 3
       before_install:
         - export COMPILER="clang-6.0" ; export FLAGS="-Wno-address-of-packed-member -I/usr/include/ -UMAGMA_PEDANTIC -O3"
     - stage: Xenial
@@ -813,6 +757,62 @@ jobs:
       name: XENIAL / GCC / 8.0 / NON-PEDANTIC / 3
       before_install:
         - export COMPILER="gcc-8" ; export FLAGS="-I/usr/include/ -UMAGMA_PEDANTIC -O3"
+    - stage: Xenial
+      os: linux
+      dist: xenial
+      compiler: gcc
+      name: XENIAL / CLANG / 6.0 / PEDANTIC / 0
+      before_install:
+        - export COMPILER="clang-6.0" ; export FLAGS="-Wno-address-of-packed-member -I/usr/include/ -DMAGMA_PEDANTIC -O0"
+    - stage: Xenial
+      os: linux
+      dist: xenial
+      compiler: gcc
+      name: XENIAL / CLANG / 6.0 / PEDANTIC / 1
+      before_install:
+        - export COMPILER="clang-6.0" ; export FLAGS="-Wno-address-of-packed-member -I/usr/include/ -DMAGMA_PEDANTIC -O1"
+    - stage: Xenial
+      os: linux
+      dist: xenial
+      compiler: gcc
+      name: XENIAL / CLANG / 6.0 / PEDANTIC / 2
+      before_install:
+        - export COMPILER="clang-6.0" ; export FLAGS="-Wno-address-of-packed-member -I/usr/include/ -DMAGMA_PEDANTIC -O2"
+    - stage: Xenial
+      os: linux
+      dist: xenial
+      compiler: gcc
+      name: XENIAL / CLANG / 6.0 / PEDANTIC / 3
+      before_install:
+        - export COMPILER="clang-6.0" ; export FLAGS="-Wno-address-of-packed-member -I/usr/include/ -DMAGMA_PEDANTIC -O3"
+    - stage: Xenial
+      os: linux
+      dist: xenial
+      compiler: gcc
+      name: XENIAL / CLANG / 6.0 / NON-PEDANTIC / 0
+      before_install:
+        - export COMPILER="clang-6.0" ; export FLAGS="-Wno-address-of-packed-member -I/usr/include/ -UMAGMA_PEDANTIC -O0"
+    - stage: Xenial
+      os: linux
+      dist: xenial
+      compiler: gcc
+      name: XENIAL / CLANG / 6.0 / NON-PEDANTIC / 1
+      before_install:
+        - export COMPILER="clang-6.0" ; export FLAGS="-Wno-address-of-packed-member -I/usr/include/ -UMAGMA_PEDANTIC -O1"
+    - stage: Xenial
+      os: linux
+      dist: xenial
+      compiler: gcc
+      name: XENIAL / CLANG / 6.0 / NON-PEDANTIC / 2
+      before_install:
+        - export COMPILER="clang-6.0" ; export FLAGS="-Wno-address-of-packed-member -I/usr/include/ -UMAGMA_PEDANTIC -O2"
+    - stage: Xenial
+      os: linux
+      dist: xenial
+      compiler: gcc
+      name: XENIAL / CLANG / 6.0 / NON-PEDANTIC / 3
+      before_install:
+        - export COMPILER="clang-6.0" ; export FLAGS="-Wno-address-of-packed-member -I/usr/include/ -UMAGMA_PEDANTIC -O3"
 install:
   - sudo -E apt-add-repository -y "ppa:ubuntu-toolchain-r/test"
   - printf 'Acquire::Retries "10";\n' | sudo tee --append /etc/apt/apt.conf.d/99custom
