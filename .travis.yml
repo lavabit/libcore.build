@@ -1202,7 +1202,9 @@ before_script:
   - cd $HOME && travis_retry curl --location --output util-linux-2.25.2.tar.gz https://www.kernel.org/pub/linux/utils/util-linux/v2.25/util-linux-2.25.2.tar.gz
   - tar xzf util-linux-2.25.2.tar.gz && cd util-linux-2.25.2
   - ./configure ADJTIME_PATH=/var/lib/hwclock/adjtime --disable-chfn-chsh --disable-login --disable-nologin --disable-su --disable-setpriv --disable-runuser --disable-pylibmount --disable-static --without-python --without-systemd --without-systemdsystemunitdir --without-ncurses
-  - make prlimit && install --verbose --directory $HOME/bin/ && install --verbose --mode=755 prlimit $HOME/bin/prlimit && cd $TRAVIS_BUILD_DIR
+  - make prlimit && install --verbose --directory $HOME/bin/ && install --verbose --mode=755 prlimit $HOME/bin/prlimit && cd $HOME
+  - if [ "`lsb_release -c -s`" == "xenial" ]; then travis_retry curl --location --output valgrind-3.16.0.tar.bz2 https://sourceware.org/pub/valgrind/valgrind-3.16.0.tar.bz2 && tar xjf valgrind-3.16.0.tar.bz2 && cd valgrind-3.16.0 && CFLAGS=-I/usr/include/x86_64-linux-gnu/ ./configure && make --jobs=4 && sudo make install ; fi
+  - cd $TRAVIS_BUILD_DIR
 script:
   - export HASH=`git show  --quiet | grep commit | awk -F' ' '{print $2}'`
   - travis_retry git remote add upstream https://github.com/lavabit/libcore.git
@@ -1219,4 +1221,5 @@ script:
   - CC="$COMPILER" CFLAGS="$FLAGS" make --keep-going --jobs=4 libcore.so
   - CC="$COMPILER" CFLAGS="$FLAGS" make --keep-going --jobs=4 core.check
   - $TRAVIS_BUILD_DIR/core.check
-  - valgrind --tool=memcheck --log-fd=1 --trace-children=yes --child-silent-after-fork=yes --run-libc-freeres=yes --demangle=yes --num-callers=50 --error-limit=no --show-below-main=no --undef-value-errors=yes --track-origins=yes --track-fds=yes --read-var-info=yes --smc-check=none --fullpath-after= --leak-check=yes --show-reachable=yes --leak-resolution=high --workaround-gcc296-bugs=no --partial-loads-ok=yes --track-fds=yes $TRAVIS_BUILD_DIR/core.check
+  - if [ "`lsb_release -c -s`" == "xenial" ]; then alias valgrind=/usr/local/bin/valgrind ; fi
+  - valgrind --tool=memcheck --log-fd=1 --trace-children=yes --child-silent-after-fork=yes --run-libc-freeres=yes --demangle=yes --num-callers=50 --error-limit=no --show-below-main=no --undef-value-errors=yes --track-origins=yes --track-fds=yes --read-var-info=yes --smc-check=none --fullpath-after= --leak-check=yes --show-reachable=no --leak-resolution=high --workaround-gcc296-bugs=no --partial-loads-ok=yes --track-fds=yes $TRAVIS_BUILD_DIR/core.check
