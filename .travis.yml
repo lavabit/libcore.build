@@ -814,7 +814,7 @@ jobs:
       before_install:
         - export COMPILER="clang-6.0" ; export FLAGS="-Wno-address-of-packed-member -I/usr/include/ -UMAGMA_PEDANTIC -O3"
 install:
-  - sudo -E apt-add-repository -y "ppa:ubuntu-toolchain-r/test"
+  - travis_retry sudo -E apt-add-repository -y "ppa:ubuntu-toolchain-r/test"
   - printf 'Acquire::Retries "10";\n' | sudo tee --append /etc/apt/apt.conf.d/99custom
   - printf 'Acquire::BrokenProxy "true";\n' | sudo tee --append /etc/apt/apt.conf.d/99custom
   - printf 'Acquire::http::Timeout "120";\n' | sudo tee --append /etc/apt/apt.conf.d/99custom
